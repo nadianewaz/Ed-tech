@@ -1,14 +1,16 @@
 import { XMarkIcon } from '@heroicons/react/20/solid'
+import '../banner/banner';
 
-export default function Banner() {                   
+export default function Banner( {Component, pageProps: data } ) {                   
   return (
-    <div class="bg-auto bg-no-repeat bg-center ..."  
-    style={{  
-        backgroundImage: "url(" + "./img/banner.jpg" + ")"
-      }}>
-        
-      </div>
+    <>
+    <Component {...pageProps} />
+    </>
    
     
   )
 }
+
+
+
+

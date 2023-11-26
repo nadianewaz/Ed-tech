@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const Login= () => {
-  const [email, setEmail] = useState({});
-  const [password, setPassword] = useState({});
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const handleEmailChange = (e : any) => {
     setEmail(e.target.value);

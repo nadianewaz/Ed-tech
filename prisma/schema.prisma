@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://root:12345nitu@localhost:3306/userinfo";
+  url      = env("DATABASE_URL")    
 }
 
 
@@ -20,4 +20,20 @@ model userinfo {
   email   String   @unique
 }
 
+model courses {
+  id        Int       @id @default(autoincrement())
+  date    DateTime
+  course_title    String
+  category    String
+  rating    Int
+  price     Float
+  instructor String
+  duration    Int 
+}
+model purchase_course {
+  id        Int       @id @default(autoincrement())
+  date    DateTime
+  course_id       Int
+ 
+}
 

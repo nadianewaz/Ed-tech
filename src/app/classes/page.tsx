@@ -24,7 +24,7 @@ export default function Classes() {
       course_title: "HSC 2024 ফুল সিলেবাস [বিজ্ঞান বিভাগ]",
       price: "৳ 5000",
       duration: 180,
-      image: "class3.jpg"
+      image: "class4.jpg"
     }
   ]
   return (
@@ -32,7 +32,6 @@ export default function Classes() {
       <div className="hideScrollbar mb-16 flex flex-nowrap gap-6 overflow-x-auto xl:flex-wrap">
         {classes.map((c) => {
           const imgUrl = "\img\\" + c.image;
-          console.log(imgUrl);
           return <Link href="">
             <div className="border border-[#E5E7EB]  my-0 flex h-full min-w-[200px] max-w-[200px]  cursor-pointer flex-col overflow-hidden rounded transition-colors hover:border-green md:min-w-[272px] md:rounded-[6px]">
               <div className="undefined opacity-0 transition-opacity duration-300 ease-in-out" style={{fontSize: "0px", opacity: 1}}>

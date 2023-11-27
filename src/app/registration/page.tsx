@@ -75,7 +75,7 @@ const Registration= () => {
           </div>
           <div>
             <Link href="/login"> 
-              <button> Already registered? Please login!! </button>  
+              <button style={{color: "black"}}> Already registered? Please login!! </button>  
             </Link>
           </div>
         </form>

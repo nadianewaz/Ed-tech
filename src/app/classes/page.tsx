@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "../lib/prisma";
+import PurchaseButton from './purchaseButton'
 
 export default async function Classes() {
   const classes = await prisma.courses.findMany({
@@ -55,6 +56,7 @@ export default async function Classes() {
                     {c.course_title}
                   </h2>
                 </div>
+                <PurchaseButton/>
                 <div>
                   <div className="flex items-center">
                     <p className="text-sm font-[600] text-[#1DAB55] md:text-lg">{c.price === 0? "Free": c.price}</p>

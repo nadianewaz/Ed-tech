@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { prisma } from "../lib/prisma";
 
-export default function Classes() {
+export default async function Classes() {
+  // const classes = await prisma.courses.findMany();
+
+  // prisma.courses.create({data:{course_title: "HSC 23 ফাইনাল রিভিশন লাইভ", price: 12, image: "class1.jpg", date: "", category: "class", rating: 4, instructor: ""}})
+
   const classes =  [
     {
       course_title: "HSC 23 ফাইনাল রিভিশন লাইভ",

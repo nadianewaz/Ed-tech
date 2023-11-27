@@ -10,7 +10,6 @@ const navigation = [
   { name: 'Home', href: '/', current: false},
   { name: 'Class 5-12', href: 'classes', current: false },
   { name: 'Skills', href: 'skills', current: false },
-  { name: 'Login', href: 'login', current: false },
 ]
 
 function classNames(...classes) {
@@ -66,9 +65,17 @@ export default function Navigation() {
                 
 
                 {/* Profile dropdown */}
-
+                <Link
+                  href={"login"}
+                  className={classNames(
+                    'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'rounded-md px-3 py-2 text-sm font-medium'
+                  )}
+                >
+                  Login
+                </Link>
                 
-                <Menu as="div" className="relative ml-3">
+                {/* <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
@@ -122,7 +129,7 @@ export default function Navigation() {
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
-                </Menu>
+                </Menu> */}
 
 
 

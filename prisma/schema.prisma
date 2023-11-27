@@ -36,8 +36,9 @@ model courses {
 // user's purchase course 
 model purchase_course {
   id            Int       @id @default(autoincrement())
-  date          DateTime
+  date          DateTime  @default(now())
   course_id     Int
+  user_id       Int       @default(1)
   
  
 }

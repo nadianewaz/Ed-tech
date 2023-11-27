@@ -21,19 +21,21 @@ model userinfo {
 }
 
 model courses {
-  id        Int       @id @default(autoincrement())
-  date    DateTime
-  course_title    String
-  category    String
-  rating    Int
-  price     Float
-  instructor String
-  duration    Int 
+  id            Int       @id @default(autoincrement())
+  date          DateTime
+  course_title  String
+  category      String
+  rating        Int
+  price         Float
+  instructor    String
+  duration      Int 
+  image         String
 }
+
 model purchase_course {
   id        Int       @id @default(autoincrement())
-  date    DateTime
-  course_id       Int
+  date      DateTime
+  course_id Int
  
 }
 

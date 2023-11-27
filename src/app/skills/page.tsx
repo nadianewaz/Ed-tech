@@ -5,34 +5,30 @@ export default function Skills() {
     {
       course_title: "ঘরে বসে Spoken English",
       price: "৳ 1250",
-      duration: 60,
       image: "skill1.jpg",
       instructor: "Munzereen Shahid"
     },
     {
       course_title: "IELTS Course by Munzereen Shahid",
       price: "Free",
-      duration: 120,
       image: "skill2.jpg",
       instructor: "Munzereen Shahid"
     },
     {
       course_title: "ঘরে বসে English Grammar",
       price: "৳ 1250",
-      duration: 120,
       image: "skill3.jpg",
       instructor: "Munzereen Shahid"
     },
     {
       course_title: "সহজে Spoken আরবি",
       price: "৳ 1250",
-      duration: 180,
       image: "skill4.jpg",
       instructor: "Mahade Hasan"
     }
   ]
   return (
-    <div className="m-14">
+    <div className="m-12">
       <div className="hideScrollbar mb-16 flex flex-nowrap gap-6 overflow-x-auto xl:flex-wrap">
         {classes.map((c) => {
           const imgUrl = "\img\\" + c.image;
@@ -47,9 +43,6 @@ export default function Skills() {
                     {c.course_title}
                   </h2>
                   <h3 className="max-h-[50px] overflow-hidden truncate text-xs text-[#6B7280] md:text-sm">{c.instructor}</h3>
-                  <h2 className="mb-1 max-h-14 text-sm font-semibold line-clamp-2 md:text-sm ">
-                    {c.duration}
-                  </h2>
                 </div>
                 <div>
                   <div className="flex items-center">

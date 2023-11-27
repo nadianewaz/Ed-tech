@@ -5,30 +5,26 @@ export default function Classes() {
     {
       course_title: "HSC 23 ফাইনাল রিভিশন লাইভ",
       price: "Free",
-      duration: 60,
       image: "class1.jpg"
     },
     {
       course_title: "HSC 2023 One Shot MCQ",
       price: "Free",
-      duration: 120,
       image: "class2.png"
     },
     {
       course_title: "HSC 2024 ক্র্যাশ কোর্স - প্রথম পত্র [বিজ্ঞান বিভাগ]",
       price: "৳ 2500",
-      duration: 120,
       image: "class3.jpg"
     },
     {
       course_title: "HSC 2024 ফুল সিলেবাস [বিজ্ঞান বিভাগ]",
       price: "৳ 5000",
-      duration: 180,
       image: "class4.jpg"
     }
   ]
   return (
-    <div className="m-14">
+    <div className="m-12">
       <div className="hideScrollbar mb-16 flex flex-nowrap gap-6 overflow-x-auto xl:flex-wrap">
         {classes.map((c) => {
           const imgUrl = "\img\\" + c.image;
@@ -41,9 +37,6 @@ export default function Classes() {
                 <div>
                   <h2 className="mb-1 max-h-14 text-sm font-semibold line-clamp-2 md:text-lg ">
                     {c.course_title}
-                  </h2>
-                  <h2 className="mb-1 max-h-14 text-sm font-semibold line-clamp-2 md:text-sm ">
-                    {c.duration}
                   </h2>
                 </div>
                 <div>

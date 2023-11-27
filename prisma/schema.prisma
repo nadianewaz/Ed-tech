@@ -28,7 +28,6 @@ model courses {
   rating        Int
   price         Float
   instructor    String
-  duration      Int 
   image         String
 }
 

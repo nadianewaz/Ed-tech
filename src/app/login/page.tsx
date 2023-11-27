@@ -74,7 +74,9 @@ const Login= () => {
             </button>
           </div>
           <div>
-          <Link href="/registration">registration</Link>
+            <Link href="/registration">
+              <button> New user? Please register!! </button>  
+            </Link>
           </div>
           
         </form>

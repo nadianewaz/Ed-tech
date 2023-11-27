@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const Registration= () => {
@@ -71,6 +72,11 @@ const Registration= () => {
             >
               Sign in
             </button>
+          </div>
+          <div>
+            <Link href="/login"> 
+              <button> Already registered? Please login!! </button>  
+            </Link>
           </div>
         </form>
       </div>

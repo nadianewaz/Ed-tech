@@ -1,41 +1,50 @@
 import Link from "next/link";
+import { prisma } from "../lib/prisma";
 
-export default function Skills() {
-  const classes =  [
-    {
-      id: 1,
-      course_title: "ঘরে বসে Spoken English",
-      price: "৳ 1250",
-      image: "skill1.jpg",
-      instructor: "Munzereen Shahid"
-    },
-    {
-      id: 2,
-      course_title: "IELTS Course by Munzereen Shahid",
-      price: "Free",
-      image: "skill2.jpg",
-      instructor: "Munzereen Shahid"
-    },
-    {
-      id: 3,
-      course_title: "ঘরে বসে English Grammar",
-      price: "৳ 1250",
-      image: "skill3.jpg",
-      instructor: "Munzereen Shahid"
-    },
-    {
-      id: 4,
-      course_title: "সহজে Spoken আরবি",
-      price: "৳ 1250",
-      image: "skill4.jpg",
-      instructor: "Mahade Hasan"
-    }
-  ]
+export default async function Skills() {
+  const classes = await prisma.courses.findMany({
+    where: {
+      category: {
+        equals: 'skill',
+      },
+  }
+
+  });
+  // const classes =  [
+  //   {
+  //     id: 1,
+  //     course_title: "ঘরে বসে Spoken English",
+  //     price: "৳ 1250",
+  //     image: "skill1.jpg",
+  //     instructor: "Munzereen Shahid"
+  //   },
+  //   {
+  //     id: 2,
+  //     course_title: "IELTS Course by Munzereen Shahid",
+  //     price: "Free",
+  //     image: "skill2.jpg",
+  //     instructor: "Munzereen Shahid"
+  //   },
+  //   {
+  //     id: 3,
+  //     course_title: "ঘরে বসে English Grammar",
+  //     price: "৳ 1250",
+  //     image: "skill3.jpg",
+  //     instructor: "Munzereen Shahid"
+  //   },
+  //   {
+  //     id: 4,
+  //     course_title: "সহজে Spoken আরবি",
+  //     price: "৳ 1250",
+  //     image: "skill4.jpg",
+  //     instructor: "Mahade Hasan"
+  //   }
+  // ]
   return (
     <div className="m-12">
       <div className="hideScrollbar mb-16 flex flex-nowrap gap-6 overflow-x-auto xl:flex-wrap">
         {classes.map((c) => {
-          const imgUrl = "\img\\" + c.image;
+          const imgUrl = "\img\\" + c.img;
           return <Link href="" key={c.id}>
             <div className="border border-[#E5E7EB]  my-0 flex h-full min-w-[200px] max-w-[200px]  cursor-pointer flex-col overflow-hidden rounded transition-colors hover:border-green md:min-w-[272px] md:rounded-[6px]">
               <div className="undefined opacity-0 transition-opacity duration-300 ease-in-out" style={{fontSize: "0px", opacity: 1}}>

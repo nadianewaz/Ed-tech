@@ -2,41 +2,48 @@ import Link from "next/link";
 import { prisma } from "../lib/prisma";
 
 export default async function Classes() {
-  // const classes = await prisma.courses.findMany();
+  const classes = await prisma.courses.findMany({
+    where: {
+      category: {
+        equals: 'class-course',
+      },
+  }
 
-  // await prisma.courses.create({data:{course_title: "HSC 23 ফাইনাল রিভিশন লাইভ", price: 12, image: "class1.jpg", category: "class", rating: 4, instructor: ""}})
+  });
 
-  const classes =  [
-    {
-      id: 1,
-      course_title: "HSC 23 ফাইনাল রিভিশন লাইভ",
-      price: "Free",
-      image: "class1.jpg"
-    },
-    {
-      id: 2,
-      course_title: "HSC 2023 One Shot MCQ",
-      price: "Free",
-      image: "class2.png"
-    },
-    {
-      id: 3,
-      course_title: "HSC 2024 ক্র্যাশ কোর্স - প্রথম পত্র [বিজ্ঞান বিভাগ]",
-      price: "৳ 2500",
-      image: "class3.jpg"
-    },
-    {
-      id: 4,
-      course_title: "HSC 2024 ফুল সিলেবাস [বিজ্ঞান বিভাগ]",
-      price: "৳ 5000",
-      image: "class4.jpg"
-    }
-  ]
+ 
+
+  // const classes =  [
+  //   {
+  //     id: 1,
+  //     course_title: "HSC 23 ফাইনাল রিভিশন লাইভ",
+  //     price: "Free",
+  //     image: "class1.jpg"
+  //   },
+  //   {
+  //     id: 2,
+  //     course_title: "HSC 2023 One Shot MCQ",
+  //     price: "Free",
+  //     image: "class2.png"
+  //   },
+  //   {
+  //     id: 3,
+  //     course_title: "HSC 2024 ক্র্যাশ কোর্স - প্রথম পত্র [বিজ্ঞান বিভাগ]",
+  //     price: "৳ 2500",
+  //     image: "class3.jpg"
+  //   },
+  //   {
+  //     id: 4,
+  //     course_title: "HSC 2024 ফুল সিলেবাস [বিজ্ঞান বিভাগ]",
+  //     price: "৳ 5000",
+  //     image: "class4.jpg"
+  //   }
+  // ]
   return (
     <div className="m-12">
       <div className="hideScrollbar mb-16 flex flex-nowrap gap-6 overflow-x-auto xl:flex-wrap">
         {classes.map((c) => {
-          const imgUrl = "\img\\" + c.image;
+          const imgUrl = "\img\\" + c.img;
           return <Link href="" key={c.id}>
             <div className="border border-[#E5E7EB]  my-0 flex h-full min-w-[200px] max-w-[200px]  cursor-pointer flex-col overflow-hidden rounded transition-colors hover:border-green md:min-w-[272px] md:rounded-[6px]">
               <div className="undefined opacity-0 transition-opacity duration-300 ease-in-out" style={{fontSize: "0px", opacity: 1}}>
@@ -50,7 +57,7 @@ export default async function Classes() {
                 </div>
                 <div>
                   <div className="flex items-center">
-                    <p className="text-sm font-[600] text-[#1DAB55] md:text-lg">{c.price}</p>
+                    <p className="text-sm font-[600] text-[#1DAB55] md:text-lg">{c.price === 0? "Free": c.price}</p>
                   </div>
                 </div>
               </div>
@@ -62,3 +69,4 @@ export default async function Classes() {
   )
 }
   
+

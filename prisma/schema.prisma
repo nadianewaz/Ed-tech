@@ -22,7 +22,7 @@ model userinfo {
 
 model courses {
   id            Int       @id @default(autoincrement())
-  date          DateTime
+  createdAt     DateTime  @default(now())
   course_title  String
   category      String
   rating        Int
